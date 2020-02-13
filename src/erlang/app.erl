@@ -9,10 +9,10 @@
 -module(app).
 -author("Sergei").
 %% API
--export([a/3, id/1]).
+-export([a/2, id/1]).
 % Ackermann function implementation
-a(0, N, 0) -> utils:print(N + 1), N + 1;
-a(M, 0, C) -> a(M - 1, 1, C), C = C + 1;
-a(M, N, C) -> a(M - 1, a(M, N - 1)).
+a(0, N) -> N + 1;
+a(M, 0) -> a(M - 1, 1);
+a(M, N) -> a(M - 1, a(M, N - 1)).
 
 id(X) -> X.
