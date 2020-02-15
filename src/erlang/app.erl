@@ -12,13 +12,13 @@
 -export([a/2, out/2, start/0]).
 
 
-concat(X, Y) -> [X] ++ [Y] ++ [a(X, Y)].
+concat(M, N) -> [M] ++ [N] ++ [a(M, N)].
 
 in(_, 0) -> [];
-in(X, Y) -> in(X, Y - 1) ++ [concat(X, Y - 1)].
+in(M, N) -> in(M, N - 1) ++ [concat(M, N - 1)].
 
 out(0, _) -> [];
-out(X, Y) -> out(X - 1, Y) ++ in(X - 1, Y).
+out(M, N) -> out(M - 1, N) ++ in(M - 1, N).
 
 % Ackermann function implementation
 a(0, N) -> N + 1;
