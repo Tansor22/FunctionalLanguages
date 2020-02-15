@@ -15,5 +15,9 @@ a_0_0_test() ->
   ?assertEqual(1, app:a(0, 0)).
 a_2_1_test() ->
   ?assertEqual(5, app:a(2, 1)).
+a_0_1_test() ->
+  ?assertEqual(2, app:a(0, 1)).
+a_1_1_test() ->
+  ?assertEqual(3, app:a(1, 1)).
 a_2_3_test() ->
   ?assertEqual(9, app:a(2, 3)).

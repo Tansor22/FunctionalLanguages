@@ -10,10 +10,12 @@
 -author("Sergei").
 
 %% API
--export([print/1, length/1]).
+-export([print/1, length/1, pretty_print/1]).
 
 % Print Val in console
 print(Val) -> erlang:display(Val).
+pretty_print([]) -> [];
+pretty_print([H| T]) -> print(H), pretty_print(T).
 % Length of a list
 length([]) -> 0;
 length([First | Rest]) -> 1 + utils:length(Rest).
